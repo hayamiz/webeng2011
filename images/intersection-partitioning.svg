@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="intersection-partitioning.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="395.41758"
+     inkscape:cy="854.09275"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="1124"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <defs
+     id="defs4">
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Mend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path10652" />
+    </marker>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5478">
+      <path
+         d="m 0,-9 13.5,0 0,9.900055 -13.5,0 L 0,-9 z"
+         id="path5480" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3942">
+      <path
+         d="m 519.298,602.339 -47.179,0 0,-39.766 47.179,0 0,39.766"
+         id="path3944" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3928">
+      <path
+         d="m 478.015,685.936 -0.164,0 0,-27.295 0.164,0 0,27.295"
+         id="path3930" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3914">
+      <path
+         d="m 477.851,685.936 -49.708,0 0,-39.766 49.872,0 0,12.471 -0.164,0 0,27.295"
+         id="path3916" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3900">
+      <path
+         d="m 482.989,701.1 -5.138,0 0,-12.131 5.138,0 0,12.131"
+         id="path3902" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3886">
+      <path
+         d="m 482.989,731.428 -59.31,0 0,-42.459 54.172,0 0,12.131 5.138,0 0,30.328"
+         id="path3888" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3872">
+      <path
+         d="m 548.613,701.1 -65.624,0 0,-12.131 -5.138,0 0,-3.033 0.164,0 0,-27.295 70.598,0 0,42.459"
+         id="path3874" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3858">
+      <path
+         d="m 510.703,636.064 -4.04,0 0,-17.523 4.04,0 0,17.523"
+         id="path3860" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3844">
+      <path
+         d="m 517.442,636.064 -10.779,0 4.04,0 0,-17.523 6.739,0 0,17.523"
+         id="path3846" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3830">
+      <path
+         d="m 524.187,636.064 -6.066,0 0,-17.523 6.066,0 0,17.523"
+         id="path3832" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3816">
+      <path
+         d="m 518.121,636.064 -11.458,0 10.779,0 0,-17.523 0.679,0 0,17.523"
+         id="path3818" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3802">
+      <path
+         d="m 506.663,636.064 -6.739,0 0,-17.523 10.779,0 -4.04,0 0,17.523"
+         id="path3804" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3788">
+      <path
+         d="m 499.924,636.064 -6.745,0 0,-17.523 6.745,0 0,17.523"
+         id="path3790" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3774">
+      <path
+         d="m 468.917,643.137 -0.674,0 0,-31.675 0.674,0 0,31.675"
+         id="path3776" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3760">
+      <path
+         d="m 499.924,643.137 -31.681,0 0.674,0 0,-31.675 31.007,0 0,7.079 -6.745,0 0,17.523 6.745,0 0,7.073"
+         id="path3762" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3746">
+      <path
+         d="m 549.796,643.137 -31.675,0 0,-7.073 6.066,0 0,-17.523 -6.066,0 0,-7.079 31.675,0 0,31.675"
+         id="path3748" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3732">
+      <path
+         d="m 468.243,643.137 -31.001,0 0,-31.675 31.675,0 -0.674,0 0,31.675"
+         id="path3734" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3718">
+      <path
+         d="m 379.285,590.906 -4.046,0 0,-17.524 4.046,0 0,17.524"
+         id="path3720" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3704">
+      <path
+         d="m 386.023,590.906 0,-17.524 0,17.524"
+         id="path3706" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3690">
+      <path
+         d="m 386.023,590.906 -10.784,0 4.046,0 0,-17.524 6.738,0 0,17.524"
+         id="path3692" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3676">
+      <path
+         d="m 392.762,590.906 -6.739,0 0,-17.524 6.739,0 0,17.524"
+         id="path3678" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3662">
+      <path
+         d="m 369.173,590.906 -0.673,0 0,-17.524 0.673,0 0,17.524"
+         id="path3664" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3648">
+      <path
+         d="m 375.239,590.906 -6.066,0 0,-17.524 10.112,0 -4.046,0 0,17.524"
+         id="path3650" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3634">
+      <path
+         d="m 386.023,573.382 0,0"
+         id="path3636" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3620">
+      <path
+         d="m 368.5,590.906 -6.739,0 0,-17.524 7.412,0 -0.673,0 0,17.524"
+         id="path3622" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3606">
+      <path
+         d="m 419.045,597.984 -33.022,0 0,-7.078 6.739,0 0,-17.524 -6.739,0 0,-7.073 33.022,0 0,31.675"
+         id="path3608" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3592">
+      <path
+         d="m 338.172,597.984 -2.02,0 0,-31.365 2.02,0 0,31.365"
+         id="path3594" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3578">
+      <path
+         d="m 369.173,597.984 -31.001,0 0,-31.365 -2.02,0 0,-0.31 33.021,0 0,7.073 -7.412,0 0,17.524 7.412,0 0,7.078"
+         id="path3580" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3564">
+      <path
+         d="m 402.194,701.1 -70.761,0 0,-42.459 70.761,0 0,42.459"
+         id="path3566" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3550">
+      <path
+         d="m 379.285,636.064 -4.046,0 0,-17.523 4.046,0 0,17.523"
+         id="path3552" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3536">
+      <path
+         d="m 386.023,636.064 -10.784,0 4.046,0 0,-17.523 6.738,0 0,17.523"
+         id="path3538" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3522">
+      <path
+         d="m 392.762,636.064 -6.065,0 0,-17.523 6.065,0 0,17.523"
+         id="path3524" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3508">
+      <path
+         d="m 386.697,636.064 -11.458,0 10.784,0 0,-17.523 0.674,0 0,17.523"
+         id="path3510" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3494">
+      <path
+         d="m 375.239,636.064 -6.739,0 0,-17.523 10.785,0 -4.046,0 0,17.523"
+         id="path3496" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3480">
+      <path
+         d="m 368.5,636.064 -6.739,0 0,-17.523 6.739,0 0,17.523"
+         id="path3482" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3466">
+      <path
+         d="m 337.498,643.137 -0.673,0 0,-31.675 0.673,0 0,31.675"
+         id="path3468" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3452">
+      <path
+         d="m 368.5,643.137 -31.675,0 0.673,0 0,-31.675 31.002,0 0,7.079 -6.739,0 0,17.523 6.739,0 0,7.073"
+         id="path3454" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3438">
+      <path
+         d="m 418.372,643.137 -31.675,0 0,-7.073 6.065,0 0,-17.523 -6.065,0 0,-7.079 31.675,0 0,31.675"
+         id="path3440" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3424">
+      <path
+         d="m 336.825,643.137 -31.001,0 0,-31.675 31.674,0 -0.673,0 0,31.675"
+         id="path3426" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3410">
+      <path
+         d="m 338.172,598.294 -33.028,0 0,-31.675 31.008,0 0,31.365 2.02,0 0,0.31"
+         id="path3412" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3396">
+      <path
+         d="m 277.515,701.1 -70.768,0 0,-42.459 70.768,0 0,42.459"
+         id="path3398" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3382">
+      <path
+         d="m 254.599,636.064 -4.045,0 0,-17.523 4.045,0 0,17.523"
+         id="path3384" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3368">
+      <path
+         d="m 261.338,636.064 -10.784,0 4.045,0 0,-17.523 6.739,0 0,17.523"
+         id="path3370" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3354">
+      <path
+         d="m 268.077,636.064 -6.065,0 0,-17.523 6.065,0 0,17.523"
+         id="path3356" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3340">
+      <path
+         d="m 262.012,636.064 -11.458,0 10.784,0 0,-17.523 0.674,0 0,17.523"
+         id="path3342" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3326">
+      <path
+         d="m 250.554,636.064 -6.739,0 0,-17.523 10.784,0 -4.045,0 0,17.523"
+         id="path3328" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3312">
+      <path
+         d="m 243.815,636.064 -6.739,0 0,-17.523 6.739,0 0,17.523"
+         id="path3314" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3298">
+      <path
+         d="m 212.813,643.137 -0.673,0 0,-31.675 0.673,0 0,31.675"
+         id="path3300" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3284">
+      <path
+         d="m 243.815,643.137 -31.675,0 0.673,0 0,-31.675 31.002,0 0,7.079 -6.739,0 0,17.523 6.739,0 0,7.073"
+         id="path3286" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3270">
+      <path
+         d="m 293.692,643.137 -31.68,0 0,-7.073 6.065,0 0,-17.523 -6.065,0 0,-7.079 31.68,0 0,31.675"
+         id="path3272" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3256">
+      <path
+         d="m 212.14,643.137 -31.002,0 0,-31.675 31.675,0 -0.673,0 0,31.675"
+         id="path3258" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3242">
+      <path
+         d="m 265.044,602.339 -47.172,0 0,-39.766 47.172,0 0,39.766"
+         id="path3244" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3228">
+      <path
+         d="m 133.626,675.491 -4.046,0 0,-17.524 4.046,0 0,17.524"
+         id="path3230" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3214">
+      <path
+         d="m 140.365,675.491 -10.785,0 4.046,0 0,-17.524 6.739,0 0,17.524"
+         id="path3216" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3200">
+      <path
+         d="m 147.104,675.491 -17.524,0 10.785,0 0,-17.524 6.739,0 0,17.524"
+         id="path3202" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3186">
+      <path
+         d="m 129.58,675.491 -6.738,0 0,-17.524 10.784,0 -4.046,0 0,17.524"
+         id="path3188" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3172">
+      <path
+         d="m 122.842,675.491 -6.739,0 0,-17.524 17.523,0 -10.784,0 0,17.524"
+         id="path3174" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3158">
+      <path
+         d="m 133.96,636.064 -4.04,0 0,-17.523 4.04,0 0,17.523"
+         id="path3160" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3144">
+      <path
+         d="m 140.699,636.064 -10.779,0 4.04,0 0,-17.523 6.739,0 0,17.523"
+         id="path3146" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3130">
+      <path
+         d="m 147.438,636.064 -6.066,0 0,-17.523 6.066,0 0,17.523"
+         id="path3132" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3116">
+      <path
+         d="m 141.372,636.064 -11.452,0 10.779,0 0,-17.523 0.673,0 0,17.523"
+         id="path3118" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3102">
+      <path
+         d="m 129.92,636.064 -6.745,0 0,-17.523 10.785,0 -4.04,0 0,17.523"
+         id="path3104" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3088">
+      <path
+         d="m 123.175,636.064 -6.739,0 0,-17.523 6.739,0 0,17.523"
+         id="path3090" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3074">
+      <path
+         d="m 92.174,643.137 -0.674,0 0,-31.675 0.674,0 0,31.675"
+         id="path3076" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3060">
+      <path
+         d="m 123.175,643.137 -31.675,0 0.674,0 0,-31.675 31.001,0 0,7.079 -6.739,0 0,17.523 6.739,0 0,7.073"
+         id="path3062" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3046">
+      <path
+         d="m 173.053,643.137 -31.681,0 0,-7.073 6.066,0 0,-17.523 -6.066,0 0,-7.079 31.681,0 0,31.675"
+         id="path3048" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3032">
+      <path
+         d="m 91.5,643.137 -31.001,0 0,-31.675 31.675,0 -0.674,0 0,31.675"
+         id="path3034" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3018">
+      <path
+         d="m 140.699,602.339 -47.173,0 0,-39.766 47.173,0 0,39.766"
+         id="path3020" />
+    </clipPath>
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Mendt"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mendt">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="marker-start:none;stroke:#ff0000;stroke-width:1.0pt;fill:#ff0000;fill-rule:evenodd"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path11225" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow1MendtW"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1MendtW">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;marker-start:none;stroke:#0014ff;stroke-width:1.0pt;fill:#0014ff"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path11743" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow1MendtB"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1MendtB">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;marker-start:none;stroke:#ffaa00;stroke-width:1.0pt;fill:#ffaa00"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path11746" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow1MendtBr"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1MendtBr">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="marker-start:none;stroke:#00eb18;stroke-width:1.0pt;fill:#00eb18;fill-rule:evenodd"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path12283" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="レイヤー 1">
+    <text
+       sodipodi:linespacing="125%"
+       id="text9552"
+       y="112.87695"
+       x="5.6336899"
+       style="font-size:44.23727798px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       xml:space="preserve"><tspan
+         style="font-size:22px"
+         y="112.87695"
+         x="5.6336899"
+         id="tspan9554"
+         sodipodi:role="line">posting list 1</tspan></text>
+    <g
+       transform="matrix(1.177418,0,0,1.177418,-49.006312,-10.700742)"
+       id="g9588">
+      <g
+         id="g9556"
+         transform="translate(38,-2)">
+        <rect
+           y="87.666504"
+           x="129.29953"
+           height="28.284271"
+           width="22.468454"
+           id="rect9530"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9534"
+           width="82.46846"
+           height="28.284271"
+           x="149.29953"
+           y="87.666504" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text9578"
+         y="109.6479"
+         x="214.42857"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         xml:space="preserve"><tspan
+           style="font-size:24px"
+           y="109.6479"
+           x="214.42857"
+           id="tspan9580"
+           sodipodi:role="line">…</tspan></text>
+    </g>
+    <g
+       transform="matrix(1.177418,0,0,1.177418,68.735484,-10.700742)"
+       id="g9595">
+      <g
+         transform="translate(38,-2)"
+         id="g9597">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9599"
+           width="22.468454"
+           height="28.284271"
+           x="129.29953"
+           y="87.666504" />
+        <rect
+           y="87.666504"
+           x="149.29953"
+           height="28.284271"
+           width="82.46846"
+           id="rect9601"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         x="214.42857"
+         y="109.6479"
+         id="text9603"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan9605"
+           x="214.42857"
+           y="109.6479"
+           style="font-size:24px">…</tspan></text>
+    </g>
+    <text
+       transform="matrix(0,0.80700657,-1.2391473,0,0,0)"
+       xml:space="preserve"
+       style="font-size:150.47447205px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       x="77.494278"
+       y="-167.31903"
+       id="text9607"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan9609"
+         x="77.494278"
+         y="-167.31903"
+         style="font-size:90.28468323px">{</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:44.23727798px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       x="161.67421"
+       y="58.790401"
+       id="text9611"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan9613"
+         x="161.67421"
+         y="58.790401"
+         style="font-size:19.90677452px">N items = 1 block</tspan></text>
+    <g
+       id="g9615"
+       transform="matrix(1.177418,0,0,1.177418,186.47729,-10.700742)">
+      <g
+         id="g9617"
+         transform="translate(38,-2)">
+        <rect
+           y="87.666504"
+           x="129.29953"
+           height="28.284271"
+           width="22.468454"
+           id="rect9619"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9621"
+           width="82.46846"
+           height="28.284271"
+           x="149.29953"
+           y="87.666504" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text9623"
+         y="109.6479"
+         x="214.42857"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         xml:space="preserve"><tspan
+           style="font-size:24px"
+           y="109.6479"
+           x="214.42857"
+           id="tspan9625"
+           sodipodi:role="line">…</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:44.23727798px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       x="5.6336899"
+       y="161.11424"
+       id="text9627"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan9629"
+         x="5.6336899"
+         y="161.11424"
+         style="font-size:22px">posting list 2</tspan></text>
+    <g
+       transform="matrix(1.177418,0,0,1.177418,-49.006312,36.395978)"
+       id="g9631">
+      <g
+         transform="translate(38,-2)"
+         id="g9633">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9635"
+           width="22.468454"
+           height="28.284271"
+           x="129.29953"
+           y="87.666504" />
+        <rect
+           y="87.666504"
+           x="149.29953"
+           height="28.284271"
+           width="82.46846"
+           id="rect9637"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         x="214.42857"
+         y="109.6479"
+         id="text9639"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan9641"
+           x="214.42857"
+           y="109.6479"
+           style="font-size:24px">…</tspan></text>
+    </g>
+    <g
+       id="g9643"
+       transform="matrix(1.177418,0,0,1.177418,68.735484,36.395978)">
+      <g
+         id="g9645"
+         transform="translate(38,-2)">
+        <rect
+           y="87.666504"
+           x="129.29953"
+           height="28.284271"
+           width="22.468454"
+           id="rect9647"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9649"
+           width="82.46846"
+           height="28.284271"
+           x="149.29953"
+           y="87.666504" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text9651"
+         y="109.6479"
+         x="214.42857"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         xml:space="preserve"><tspan
+           style="font-size:24px"
+           y="109.6479"
+           x="214.42857"
+           id="tspan9653"
+           sodipodi:role="line">…</tspan></text>
+    </g>
+    <g
+       transform="matrix(1.177418,0,0,1.177418,186.47729,36.395978)"
+       id="g9655">
+      <g
+         transform="translate(38,-2)"
+         id="g9657">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9659"
+           width="22.468454"
+           height="28.284271"
+           x="129.29953"
+           y="87.666504" />
+        <rect
+           y="87.666504"
+           x="149.29953"
+           height="28.284271"
+           width="82.46846"
+           id="rect9661"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         x="214.42857"
+         y="109.6479"
+         id="text9663"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan9665"
+           x="214.42857"
+           y="109.6479"
+           style="font-size:24px">…</tspan></text>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text9667"
+       y="207.35152"
+       x="5.6336899"
+       style="font-size:44.23727798px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       xml:space="preserve"><tspan
+         style="font-size:22px"
+         y="207.35152"
+         x="5.6336899"
+         id="tspan9669"
+         sodipodi:role="line">posting list 3</tspan></text>
+    <g
+       id="g9671"
+       transform="matrix(1.177418,0,0,1.177418,-49.006312,83.492698)">
+      <g
+         id="g9673"
+         transform="translate(38,-2)">
+        <rect
+           y="87.666504"
+           x="129.29953"
+           height="28.284271"
+           width="22.468454"
+           id="rect9675"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9677"
+           width="82.46846"
+           height="28.284271"
+           x="149.29953"
+           y="87.666504" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text9679"
+         y="109.6479"
+         x="214.42857"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         xml:space="preserve"><tspan
+           style="font-size:24px"
+           y="109.6479"
+           x="214.42857"
+           id="tspan9681"
+           sodipodi:role="line">…</tspan></text>
+    </g>
+    <g
+       transform="matrix(1.177418,0,0,1.177418,68.735484,83.492698)"
+       id="g9683">
+      <g
+         transform="translate(38,-2)"
+         id="g9685">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9687"
+           width="22.468454"
+           height="28.284271"
+           x="129.29953"
+           y="87.666504" />
+        <rect
+           y="87.666504"
+           x="149.29953"
+           height="28.284271"
+           width="82.46846"
+           id="rect9689"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         x="214.42857"
+         y="109.6479"
+         id="text9691"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan9693"
+           x="214.42857"
+           y="109.6479"
+           style="font-size:24px">…</tspan></text>
+    </g>
+    <g
+       id="g9695"
+       transform="matrix(1.177418,0,0,1.177418,186.47729,83.492698)">
+      <g
+         id="g9697"
+         transform="translate(38,-2)">
+        <rect
+           y="87.666504"
+           x="129.29953"
+           height="28.284271"
+           width="22.468454"
+           id="rect9699"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9701"
+           width="82.46846"
+           height="28.284271"
+           x="149.29953"
+           y="87.666504" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text9703"
+         y="109.6479"
+         x="214.42857"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         xml:space="preserve"><tspan
+           style="font-size:24px"
+           y="109.6479"
+           x="214.42857"
+           id="tspan9705"
+           sodipodi:role="line">…</tspan></text>
+    </g>
+    <g
+       transform="matrix(1.177418,0,0,1.177418,304.21909,36.395978)"
+       id="g9747">
+      <g
+         transform="translate(38,-2)"
+         id="g9749">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9751"
+           width="22.468454"
+           height="28.284271"
+           x="129.29953"
+           y="87.666504" />
+        <rect
+           y="87.666504"
+           x="149.29953"
+           height="28.284271"
+           width="82.46846"
+           id="rect9753"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         x="214.42857"
+         y="109.6479"
+         id="text9755"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan9757"
+           x="214.42857"
+           y="109.6479"
+           style="font-size:24px">…</tspan></text>
+    </g>
+    <g
+       id="g9771"
+       transform="matrix(1.177418,0,0,1.177418,304.21909,83.492698)">
+      <g
+         id="g9773"
+         transform="translate(38,-2)">
+        <rect
+           y="87.666504"
+           x="129.29953"
+           height="28.284271"
+           width="22.468454"
+           id="rect9775"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9777"
+           width="82.46846"
+           height="28.284271"
+           x="149.29953"
+           y="87.666504" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text9779"
+         y="109.6479"
+         x="214.42857"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         xml:space="preserve"><tspan
+           style="font-size:24px"
+           y="109.6479"
+           x="214.42857"
+           id="tspan9781"
+           sodipodi:role="line">…</tspan></text>
+    </g>
+    <g
+       transform="matrix(1.177418,0,0,1.177418,421.96088,83.492698)"
+       id="g9783">
+      <g
+         transform="translate(38,-2)"
+         id="g9785">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect9787"
+           width="22.468454"
+           height="28.284271"
+           x="129.29953"
+           y="87.666504" />
+        <rect
+           y="87.666504"
+           x="149.29953"
+           height="28.284271"
+           width="82.46846"
+           id="rect9789"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+         x="214.42857"
+         y="109.6479"
+         id="text9791"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan9793"
+           x="214.42857"
+           y="109.6479"
+           style="font-size:24px">…</tspan></text>
+    </g>
+    <path
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:connector-curvature="0"
+       id="rect9797"
+       d="m 152.58973,94.935729 0,88.895061 0,28.66277 113.03213,0 117.15309,0 0,-23.9531 -121.86277,0 0,-93.604731 z"
+       style="fill:#ff0000;fill-opacity:0.1837607;fill-rule:nonzero;stroke:#ff0404;stroke-width:2.35483599;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       transform="scale(0.8965966,1.1153288)"
+       xml:space="preserve"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       x="167.74936"
+       y="101.48255"
+       id="text10567"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10569"
+         x="167.74936"
+         y="101.48255"
+         style="font-size:16.89070511px">20</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text10579"
+       y="143.70932"
+       x="167.74936"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       xml:space="preserve"
+       transform="scale(0.8965966,1.1153288)"><tspan
+         style="font-size:16.89070511px"
+         y="143.70932"
+         x="167.74936"
+         id="tspan10581"
+         sodipodi:role="line">10</tspan></text>
+    <text
+       transform="scale(0.8965966,1.1153288)"
+       xml:space="preserve"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       x="167.74936"
+       y="185.93605"
+       id="text10583"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10585"
+         x="167.74936"
+         y="185.93605"
+         style="font-size:16.89070511px">15</tspan></text>
+    <path
+       sodipodi:nodetypes="cccccccccccccc"
+       inkscape:connector-curvature="0"
+       id="rect10622"
+       d="m 269.48525,93.942278 0,47.685432 -118.3305,0 0,24.13707 118.3305,0 0,18.24998 0,28.84674 347.33831,0 0,-24.13707 -238.42714,0 0,-13.54031 0,-38.26608 0,-42.975762 z"
+       style="fill:#00ff00;fill-opacity:0.1837607;fill-rule:nonzero;stroke:#00d80b;stroke-width:2.35483599;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <path
+       sodipodi:nodetypes="ccccccccccccccc"
+       inkscape:connector-curvature="0"
+       id="rect10629"
+       d="m 387.81577,94.530991 0,47.685429 -117.15309,0 0,23.54836 234.89488,0 0,47.09672 117.7418,0 0,-0.58871 111.85472,0 0,-22.95965 -118.91922,0 0,-47.68543 -117.74181,0 0,-47.096719 z"
+       style="fill:#0007ff;fill-opacity:0.1837607;fill-rule:nonzero;stroke:#1e04ff;stroke-width:2.35483599;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path10638"
+       d="m 205.31597,211.08028 c -17.07255,30.02416 -8.83063,42.97575 -1.17741,66.52411"
+       style="fill:none;stroke:#ff0000;stroke-width:3.53225398;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mendt)" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path11595"
+       d="m 329.44561,211.08028 c -17.07256,30.02416 -8.83064,42.97575 -1.17742,66.52411"
+       style="fill:none;stroke:#00eb18;stroke-width:3.53225398;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1MendtBr)" />
+    <path
+       style="fill:none;stroke:#0014ff;stroke-width:3.53225398;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1MendtW)"
+       d="m 534.99301,211.08028 c -17.07256,30.02416 -8.83063,42.97575 -1.17742,66.52411"
+       id="path11597"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:47.09671783px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#f40000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       x="180.422"
+       y="309.05829"
+       id="text12123"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan12125"
+         x="180.422"
+         y="309.05829"
+         style="font-size:28.25803185px;fill:#f40000;fill-opacity:1">task 1</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text12127"
+       y="309.05829"
+       x="298.16379"
+       style="font-size:47.09671783px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#00cd0b;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       xml:space="preserve"><tspan
+         style="font-size:28.25803185px;fill:#00cd0b;fill-opacity:1"
+         y="309.05829"
+         x="298.16379"
+         id="tspan12129"
+         sodipodi:role="line">task 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:47.09671783px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0209ff;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       x="510.09906"
+       y="309.05829"
+       id="text12131"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan12133"
+         x="510.09906"
+         y="309.05829"
+         style="font-size:28.25803185px;fill:#0209ff;fill-opacity:1">task 3</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text10571"
+       y="101.48255"
+       x="299.07019"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       xml:space="preserve"
+       transform="scale(0.8965966,1.1153288)"><tspan
+         style="font-size:16.89070511px"
+         y="101.48255"
+         x="299.07019"
+         id="tspan10573"
+         sodipodi:role="line">35</tspan></text>
+    <text
+       transform="scale(0.8965966,1.1153288)"
+       xml:space="preserve"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       x="430.39105"
+       y="101.48255"
+       id="text10575"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10577"
+         x="430.39105"
+         y="101.48255"
+         style="font-size:16.89070511px">62</tspan></text>
+    <text
+       transform="scale(0.8965966,1.1153288)"
+       xml:space="preserve"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       x="299.07019"
+       y="143.70932"
+       id="text10587"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10589"
+         x="299.07019"
+         y="143.70932"
+         style="font-size:16.89070511px">40</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text10591"
+       y="143.70932"
+       x="430.39105"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       xml:space="preserve"
+       transform="scale(0.8965966,1.1153288)"><tspan
+         style="font-size:16.89070511px"
+         y="143.70932"
+         x="430.39105"
+         id="tspan10593"
+         sodipodi:role="line">65</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text10595"
+       y="185.93605"
+       x="299.07019"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       xml:space="preserve"
+       transform="scale(0.8965966,1.1153288)"><tspan
+         style="font-size:16.89070511px"
+         y="185.93605"
+         x="299.07019"
+         id="tspan10597"
+         sodipodi:role="line">30</tspan></text>
+    <text
+       transform="scale(0.8965966,1.1153288)"
+       xml:space="preserve"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       x="430.39105"
+       y="185.93605"
+       id="text10599"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10601"
+         x="430.39105"
+         y="185.93605"
+         style="font-size:16.89070511px">45</tspan></text>
+    <text
+       transform="scale(0.8965966,1.1153288)"
+       xml:space="preserve"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       x="561.71185"
+       y="185.93605"
+       id="text10603"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10605"
+         x="561.71185"
+         y="185.93605"
+         style="font-size:16.89070511px">60</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text10607"
+       y="185.93605"
+       x="693.03265"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       xml:space="preserve"
+       transform="scale(0.8965966,1.1153288)"><tspan
+         style="font-size:16.89070511px"
+         y="185.93605"
+         x="693.03265"
+         id="tspan10609"
+         sodipodi:role="line">75</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text10611"
+       y="143.70932"
+       x="561.71185"
+       style="font-size:42.22676086px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'Takao Pゴシック';-inkscape-font-specification:'Takao Pゴシック'"
+       xml:space="preserve"
+       transform="scale(0.8965966,1.1153288)"><tspan
+         style="font-size:16.89070511px"
+         y="143.70932"
+         x="561.71185"
+         id="tspan10613"
+         sodipodi:role="line">80</tspan></text>
+  </g>
+</svg>

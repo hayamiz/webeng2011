@@ -1,0 +1,3 @@
+
+%.png: %.svg
+  inkscape --export-background="#ffffff" --export-background-opacity=0.0 --export-area-drawing --export-text-to-path --export-png=$@ -f $<

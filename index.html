@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Getting Started with deck.js</title>
+	<title>Posting List Intersection on Multicore Architectures</title>
 	
 	<meta name="description" content="A jQuery library for modern HTML presentations">
 	<meta name="author" content="Caleb Troughton">
@@ -23,7 +23,7 @@
 	
 	<!-- Theme CSS files (menu swaps these out) -->
 	<link rel="stylesheet" id="style-theme-link" href="./themes/style/web-2.0.css">
-	<link rel="stylesheet" id="transition-theme-link" href="./themes/transition/horizontal-slide.css">
+	<link rel="stylesheet" id="transition-theme-link" href="./themes/transition/vertical-slide.css">
 	
 	<!-- Custom CSS just for this page -->
 	<link rel="stylesheet" href="./css/webeng2011.css">
@@ -33,154 +33,195 @@
 
 <body class="deck-container">
 
-<div class="theme-menu">
-	<h2>Themes</h2>	
-	
-	<label for="style-themes">Style:</label>
-	<select id="style-themes">
-		<option selected value="./themes/style/web-2.0.css">Web 2.0</option>
-		<option value="./themes/style/swiss.css">Swiss</option>
-		<option value="./themes/style/neon.css">Neon</option>
-		<option value="">None</option>
-	</select>
-	
-	<label for="transition-themes">Transition:</label>
-	<select id="transition-themes">
-		<option selected value="./themes/transition/horizontal-slide.css">Horizontal Slide</option>
-		<option value="./themes/transition/vertical-slide.css">Vertical Slide</option>
-		<option value="./themes/transition/fade.css">Fade</option>
-		<option value="">None</option>
-	</select>
-</div>
-
 <section class="slide" id="title-slide">
-	<h1>Getting Started with deck.js</h1>
+  <h2>Web Engineering 2011</h2>
+  <h4 style="text-align: right">
+    Yuto HAYAMIZU <br />
+    48-096418 <br />
+    Kitsuregawa Lab.
+  </h4>
+  <br />
+  <h3>SIGIR 2011<br />Posting List Intersection on Multicore Architectures</h3>
+  <ul>
+    <li>Shirish Tatikonda <small>IBM Almaden Research, San Jose, CA, USA</small></li>
+    <li>B. Barla Cambazoglu <small>Yahoo! Research, Barcelona, Spain</small></li>
+    <li>Flavio P. Junqueira <small>Yahoo! Research, Barcelona, Spain</small></li>
+  </ul>
 </section>
 
-<section class="slide" id="how-to-overview">
-	<h2>How to Make a Deck</h2>
-	<ol>
-		<li>
-			<h3>Write Slides</h3>
-			<p>Slide content is simple&nbsp;HTML.</p>
-		</li>
-		<li>
-			<h3>Choose Themes</h3>
-			<p>One for slide styles and one for deck&nbsp;transitions.</p>
-		</li>
-		<li>
-			<h3>Include Extensions</h3>
-			<p>Add extra functionality to your deck, or leave it stripped&nbsp;down.</p>
-		</li>
-	</ol>
+<section class="slide" id="first">
+  <h2>Slides Online</h2>
+  <center>
+    <a href="http://bit.ly/webeng2011" style="font-size: 2em;">http://bit.ly/webeng2011</a>
+  </center>
+  <br />
+  <img src="./images/html5.png" style="width: 20%;" alt="HTML5 required." />
+  <center>
+    required.
+  </center>
 </section>
 
-<section class="slide" id="markup">
-	<h2>The Markup</h2>
-	<p>Slides are just HTML elements with a class of <code>slide</code>.</p>
-	<pre><code>&lt;section class=&quot;slide&quot;&gt;
-   &lt;h2&gt;How to Make a Deck&lt;/h2&gt;
-   &lt;ol&gt;
-      &lt;li&gt;
-         &lt;h3&gt;Write Slides&lt;/h3&gt;
-         &lt;p&gt;Slide content is simple HTML.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-         &lt;h3&gt;Choose Themes&lt;/h3&gt;
-         &lt;p&gt;One for slide styles and one for deck transitions.&lt;/p&gt;
-      &lt;/li&gt;
-      &hellip;
-   &lt;/ol&gt;
-&lt;/section&gt;</code></pre>
+<section class="slide" id="background">
+  <h2>Background: Multicore for Search Engine</h2>
+  <ul>
+    <li><h3>Throughput and query latency are very important for search engines.</h3></li>
+    <ul>
+      <li class="slide"><h4>Higher throughput → supporting more and more users</h4></li>
+      <li class="slide"><h4>Shorter query latency → better user satisfaction</h4></li>
+      <li class="slide">A number of optimizations employed for these two performance indicators.</li>
+    </ul>
+    <li class="slide"><h3>An emerging multicore CPU gave a chance to decrease query latency.</h3></li>
+    <ul>
+      <li class="slide">Finer-grained parallelization than ever
+      <ul>
+        <li>Lower communication cost between processing cores
+        </li>
+      </ul>
+      </li>
+    </ul>
+  </ul>
+  <img src="./images/coarse-vs-fine.png" class="slide" />
 </section>
 
-<section class="slide" id="themes">
-	<h2>Style Themes</h2>
-	<p>Customizes the colors, typography, and layout of slide&nbsp;content.</p>
-	<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/style-theme.css&quot;&gt;</code></pre>
-	<h2>Transition Themes</h2>
-	<p>Defines transitions between slides using CSS3 transitions.  Less capable browsers fall back to cutaways. But <strong>you</strong> aren&rsquo;t using <em>those</em> browsers to give your presentations, are&nbsp;you&hellip;</p>
-	<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/transition-theme.css&quot;&gt;</code></pre>
+<section class="slide" id="posting-list">
+  <h2>Where to Parallelize?</h2>
+  <img src="./images/search-engine-steps.png" />
+  <h3 class="slide">Posting list intersection</h3>
+  <ul>
+    <li class="slide">Posting list &hellip; a list of document IDs where a certain word appears
+    <br />
+    <br />
+    <img  class="slide" src="./images/posting-list.png" />
+    </li>
+    <li class="slide">Amount of computation ∝ # of documents indexed</li>
+  </ul>
 </section>
 
-<section class="slide" id="extensions">
-	<h2>Extensions</h2>
-	<p>Core gives you basic slide functionality with left and right arrow navigation, but you may want more. Here are the ones included in this&nbsp;deck:</p>
-	
-	<ul>
-		<li class="slide" id="extensions-goto">
-			<strong>deck.goto</strong>: Adds a shortcut key to jump to any slide number.  Hit g, type in the slide number, and hit&nbsp;enter.
-		</li>
-		
-		<li class="slide" id="extensions-hash">
-			<strong>deck.hash</strong>: Enables internal linking within slides, deep linking to individual slides, and updates the address bar &amp; a permalink anchor with each slide&nbsp;change.
-		</li>
-
-		<li class="slide" id="extensions-menu">
-			<strong>deck.menu</strong>: Adds a menu view, letting you see all slides in a grid. Hit m to toggle to menu view, continue navigating your deck, and hit m to return to normal view. Touch devices can double-tap the deck to switch between&nbsp;views.
-		</li>
-
-		<li class="slide" id="extensions-navigation">
-			<strong>deck.navigation</strong>: Adds clickable left and right buttons for the less keyboard&nbsp;inclined.
-		</li>
-
-		<li class="slide" id="extensions-status">
-			<strong>deck.status</strong>: Adds a page number indicator. (current/total)
-		</li>
-	</ul>
-	
-	<p class="slide" id="extension-folders">Each extension folder in the download package contains the necessary JavaScript, CSS, and HTML&nbsp;files. For a complete list of extension modules included in deck.js, check out the&nbsp;<a href="http://imakewebthings.github.com/deck.js/docs">documentation</a>.</p>
+<section class="slide" id="parallel-models">
+  <h2>How to Parallelize?</h2>
+  <img src="./images/parallel-models.png" />
+  <h3>Parallel Models</h3>
+  <ul>
+    <li class="slide">Inter-query &hellip; One query as one task</li>
+    <li class="slide">Proposal: DOCP-UI &hellip; <strong>DOC</strong>ument <strong>P</strong>artitioning with unified index. Each processor P<small>i</small> process a partial query, then partial results are aggregated.</li>
+    <li class="slide">Proposal: DOCP-PI &hellip; <strong>DOC</strong>ument <strong>P</strong>artitioning with partitioned index. Almost the same with DOCP-UI</li>
+    <li class="slide"><span style="color: red;">Proposal: FGQP</span> &hellip; <strong>F</strong>ine-<strong>G</strong>rained
+    <strong>Q</strong>uery <strong>P</strong>artitioning. A single
+    posting list intersection job is partitioned into multiple small
+    jobs.</li>
+  </ul>
 </section>
 
-<section class="slide" id="nested">
-	<h2>Nested Slides</h2>
-	<p>That last slide had a few steps.  To create substeps in slides, just nest them:</p>
-	<pre><code>&lt;section class=&quot;slide&quot;&gt;
-  &lt;h2&gt;Extensions&lt;/h2&gt;
-  &lt;p&gt;Core gives you basic slide functionality...&lt;/p&gt;		
-  &lt;ul&gt;
-     &lt;li class=&quot;slide&quot;&gt;
-        &lt;h3&gt;deck.goto&lt;/h3&gt;
-        &lt;p&gt;Adds a shortcut key to jump to any slide number...&lt;/p&gt;
-     &lt;/li&gt;
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;	
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/section&gt;</code></pre>
+<section class="slide" id="task-creation">
+  <h2>Fine-Grained Query Partitioning</h2>
+  <img src="./images/intersection-partitioning.png" />
+  <ol>
+    <li class="slide">Pack each N items into a block</li>
+    <li class="slide">Each block in the shortest posting list becomes a "seed" of one task</li>
+    <li class="slide">Collect relevant blocks for each "seed task". This set of blocks is a task, and each task is pushed into task pool.
+    <ul>
+      <li>"Relevant" block is a block which may have docIDs included in a "seed" block.</li>
+      <li>Here we assume items in posting lists are sorted and relevant blocks in single list is always consecutive.</li>
+    </ul>
+    </li>
+    <li class="slide">Just concatenate results of patitioned tasks.</li>
+  </ol>
 </section>
 
-<section class="slide" id="elements-images">
-	<h2>Other Elements: Images</h2>
-	<img src="http://placekitten.com/600/375" alt="Kitties">
-	<pre><code>&lt;img src=&quot;http://placekitten.com/600/375&quot; alt=&quot;Kitties&quot;&gt;</code></pre>
+<section class="slide" id="queue-thresh">
+  <h2>FGQP Task Creation Control</h2>
+  <img src="./images/theta.png" />
+  <h3>Task pool threshold: &theta;</h3>
+  <ul>
+    <li>When the number of tasks in the pool < &theta;, the task producer pops a query from query queue and create intersection tasks.</li>
+    <li class="slide">Smaller &theta;
+    <ul>
+      <li>Shorter query latency</li>
+      <li>Lower throughput</li>
+    </ul>
+    </li>
+    <li class="slide">Larger &theta;
+    <ul>
+      <li>Longer query latency</li>
+      <li>Higher throughput</li>
+    </ul>
+    </li>
+  </ul>
 </section>
 
-<section class="slide" id="elements-blockquotes">
-	<h2>Other Elements: Blockquotes</h2>
-	<blockquote cite="http://example.org">
-		<p>Food is an important part of a balanced diet.</p>
-		<p><cite>Fran Lebowitz</cite></p>
-	</blockquote>
-	<pre><code>&lt;blockquote cite=&quot;http://example.org&quot;&gt;
-  &lt;p&gt;Food is an important part of a balanced diet.&lt;/p&gt;
-  &lt;p&gt;&lt;cite&gt;Fran Lebowitz&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</code></pre>
+<section class="slide" id="experimental-setup">
+  <h2>Experimental Setup</h2>
+  <h3>Dataset</h3>
+  <ul>
+    <li>AltaVista query log (a quarter million queries)</li>
+    <li>Posting list from <a href="http://law.dsi.unimi.it/webdata/uk-2006-05/">large crawl of the UK domain</a></li>
+  </ul>
+  <h3>Environment</h3>
+  <ul>
+    <li>Quad-core Xeon E5345 (Clovertown) 2.33GHz processor × 2 (a total of 8 cores)</li>
+    <li>6GB main memory</li>
+    <ul>
+      <li>All posting lists reside in memory.</li>
+    </ul>
+  </ul>
+  <img src="./images/clovertown.jpg" class="slide" />
 </section>
 
-
-<section class="slide" id="elements-videos">
-	<h2>Other Elements: Video Embeds</h2>
-	<p>Embed videos from your favorite online video service or with an HTML5 video&nbsp;element.</p>
-	
-	<iframe src="http://player.vimeo.com/video/1063136?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
-	
-	<pre><code>&lt;iframe src=&quot;http://player.vimeo.com/video/1063136?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;400&quot; height=&quot;225&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre>
+<section class="slide" id="evaluation">
+  <h2>Evaluation of Throughput and Latency</h2>
+  <img src="./images/eval1.png" />
+  <h3>Throughput</h3>
+  <img class="slide" src="./images/load-imbalance.png" style="float: right; margin-left: 5px;" />
+  <ul>
+    <li>Inter-query and FGQP(&theta; = 150) model scaled almost linearly with the number of cores → Effective parallelization</li>
+    <ul>
+      <li>With low &theta ( = 5); value, FGQP could not always keep processors busy → Lower throughput than FGQP with &theta; = 150</li>
+    </ul>
+    <li>DOCP models performs worse than FGQP and Inter-query.</li>
+    <ul>
+      <li>Document partitioning suffered from load imbalance.</li>
+    </ul>
+  </ul>
 </section>
 
-<section class="slide" id="digging-deeper">
-	<h2>Digging Deeper</h2>
-	<p>If you want to learn about making your own themes, extending deck.js, and more, check out the&nbsp;<a href="./docs/">documentation</a>.</p>
+<section class="slide" id="evaluation">
+  <h2>Evaluation of Throughput and Latency</h2>
+  <img src="./images/eval1.png" />
+  <h3>Latency</h3>
+  <ul>
+    <li>Almost constant latency for inter-query model.</li>
+    <li>DOCP and FGQP decreased query latencies as the number of core increased.</li>
+    <ul>
+      <li>For FGQP, higher &theta; value resulted in longer query latency.</li>
+    </ul>
+  </ul>
+</section>
+
+<section class="slide" id="summary">
+  <h2>Summary</h2>
+  <h3>Two different paradigms for parallel posting list intersection for multicore</h3>
+  (Baseline: inter-query parallelization)
+  <ul>
+    <li><h4>DOCP: Document Partitioning</h4></li>
+    <ul>
+      <li>Non-negligible throughput degradation</li>
+      <li>Effective use of multicore for decreasing latency</li>
+    </ul>
+    <li><h4>FGQP: Fine-grained Query Partitioning</h4></li>
+    <ul>
+      <li>For aggresive task creation(high &theta; value)</li>
+      <ul>
+        <li>Throughput scaled almost linearly, and only 3.3% degradation when using 8 cores</li>
+        <li>3.7-fold latency improvement when using 8 cores</li>
+      </ul>
+      <li>For non-aggresive task creation(low &theta; value)</li>
+      <ul>
+        <li>16% throughput degradation when using 8 cores</li>
+        <li>5.75-fold latency improvement with 8 cores</li>
+      </ul>
+      <li>Tunable for both throughput-sensitive and latency-sensitive situations via aggressiveness of task creation (&theta; value)</li>
+    </ul>
+  </ul>
 </section>
 
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
