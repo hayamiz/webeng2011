@@ -115,13 +115,13 @@
 <section class="slide" id="task-creation">
   <h2>Fine-Grained Query Partitioning</h2>
   <img src="./images/intersection-partitioning.png" />
+  (Here we assume items in posting lists are sorted)
   <ol>
     <li class="slide">Pack each N items into a block</li>
     <li class="slide">Each block in the shortest posting list becomes a "seed" of one task</li>
     <li class="slide">Collect relevant blocks for each "seed task". This set of blocks is a task, and each task is pushed into task pool.
     <ul>
       <li>"Relevant" block is a block which may have docIDs included in a "seed" block.</li>
-      <li>Here we assume items in posting lists are sorted and relevant blocks in single list is always consecutive.</li>
     </ul>
     </li>
     <li class="slide">Just concatenate results of patitioned tasks.</li>
